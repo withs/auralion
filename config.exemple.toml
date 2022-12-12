@@ -1,0 +1,5 @@
+user_to_fetch = "" # a soundcloud user id
+client_token = "" # a soundcloubd client_ids
+img_out_path = "" # the path of the folder to download the images in e.g (./out for a folder nex to the app)
+threads = 1 # nbs of thread to download images (at least 1)
+
