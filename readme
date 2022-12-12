@@ -3,23 +3,23 @@ simple app to dump all followers of an user and download their profiles pricture
 
 use
 ---
-	- copy config.exemple.toml to config.toml
-	- fill all fields in config.toml
-		- user_to_fetch: go to https://soundcloud.com/the_username, inpect element go to netword -> xhr, refresh the page and in the filter input enter "following" now it should have an entry with a number, click on if and on the header tab find an url that start with https://api-v2.soundcloud.com/users/an_id/ where an_id is the if of the user your searching at. e.g "https://api-v2.soundcloud.com/users/63977134/followings?client_id=TdIzomEfuS0m5YKxvs0Aqy9ClIC829j&limit=3&offset=0&linked_partitioning=1&app_version=1670583925&app_locale=en" is this exemple "63977134" is the id we're looking for
-		- client_token: with the same step above in the url which start with "https://api-v2.soundcloud.com/users/an_id/" look for &client_id=the_token& in the full url, take the part btw &client_id= and &. e.g with the url above we're looking for "TdIzomEfuS0m5YKxvs0Aqy9ClIC829j"
-		- img_out_path: a relative path (prefered) (./your_folder_name) which will download images in the "your_folder_name" folder next to the app or provide an absolute path 
-		- nbs of threads to download images
-	- build:
-		- open a terminal
-		- cargo update
-		- cargo build --release
-		- run ./target/release/auralion or cargo run
-			- add --debug to debug logss
+  - copy config.exemple.toml to config.toml
+  - fill all fields in config.toml
+    - user_to_fetch: go to https://soundcloud.com/the_username, inpect element go to netword -> xhr, refresh the page and in the filter input enter "following" now it should have an entry with a number, click on if and on the header tab find an url that start with https://api-v2.soundcloud.com/users/an_id/ where an_id is the if of the user your searching at. e.g "https://api-v2.soundcloud.com/users/63977134/followings?client_id=TdIzomEfuS0m5YKxvs0Aqy9ClIC829j&limit=3&offset=0&linked_partitioning=1&app_version=1670583925&app_locale=en" is this exemple "63977134" is the id we're looking for
+    - client_token: with the same step above in the url which start with "https://api-v2.soundcloud.com/users/an_id/" look for &client_id=the_token& in the full url, take the part btw &client_id= and &. e.g with the url above we're looking for "TdIzomEfuS0m5YKxvs0Aqy9ClIC829j"
+    - img_out_path: a relative path (prefered) (./your_folder_name) which will download images in the "your_folder_name" folder next to the app or provide an absolute path 
+      - nbs of threads to download images
+    - build:
+      - open a terminal
+      - cargo update
+      - cargo build --release
+      - run ./target/release/auralion or cargo run
+        - add --debug to debug logss
 		
 	
 notes
 -----
-	- first project in rust, might not be the best rust ^^
-	- should used async reqwest and tokio instead of making this weird thread system but we'll see later
-	- cargo clippy is not happy about my return BUT I WANT MY RETURNS !
-	- rust is cool :)
+  - first project in rust, might not be the best rust ^^
+  - should used async reqwest and tokio instead of making this weird thread system but we'll see later
+  - cargo clippy is not happy about my return BUT I WANT MY RETURNS !
+  - rust is cool :)
