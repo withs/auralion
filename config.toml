@@ -1,4 +1,0 @@
-user_to_fetch = "501051204"
-client_token = "TnPIzomBfuS0m5YKxvy0Aqy9ClIC8F9j"
-img_out_path = "./out"
-threads = 10
